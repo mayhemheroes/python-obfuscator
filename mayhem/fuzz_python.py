@@ -4,7 +4,8 @@ import atheris
 import sys
 import fuzz_helpers
 
-with atheris.instrument_imports(include=["python_obfuscator"]):
+with atheris.instrument_imports(include=["python_obfuscator"],
+                                exclude=["python_obfuscator.helpers"]):
     import python_obfuscator
 
 def TestOneInput(data):
