@@ -5,7 +5,8 @@ import sys
 import fuzz_helpers
 
 with atheris.instrument_imports(include=["python_obfuscator"],
-                                exclude=["python_obfuscator.techniques"]):
+                                exclude=["python_obfuscator.helpers.variable_name_generator",
+                                "python_obfuscator.helpers.random_datatype"]):
     import python_obfuscator
 
 def TestOneInput(data):
