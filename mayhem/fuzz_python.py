@@ -9,9 +9,10 @@ with atheris.instrument_imports(include=["python_obfuscator"],
                                 "python_obfuscator.helpers.random_datatype"]):
     import python_obfuscator
 
+obfuscator = python_obfuscator.obfuscator()
+
 def TestOneInput(data):
     fdp = fuzz_helpers.EnhancedFuzzedDataProvider(data)
-    obfuscator = python_obfuscator.obfuscator()
     obfuscator.obfuscate(fdp.ConsumeRemainingString())
 
 def main():
