@@ -1,0 +1,9 @@
+project: python-obfuscator
+target: fuzz-python
+testsuite:
+    - file://mayhem/testsuite
+
+cmds:
+  - cmd: /src/mayhem/fuzz_python.py
+    libfuzzer: true
+    timeout: 20
